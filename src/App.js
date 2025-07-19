@@ -17,6 +17,83 @@ const modules = [
   'Synthesis Seatwork',
 ];
 
+const gdriveLinks = {
+  Kurt: [
+    // Module 1
+    "https://drive.google.com/file/d/1WttKLmiWCKqHCgloxdtd5vtWNkRLR4uc/preview",
+    // Module 2
+    "https://drive.google.com/file/d/1nlZz92V_FGLxVtHi1oJ-L0iGSQ4Z5f4E/preview",
+    // Module 3
+    "https://drive.google.com/file/d/19jbAgNv1FNt0rJepr6iCCOQtzGsQGPDl/preview",
+    // Module 4
+    "https://drive.google.com/file/d/12Kyh-ldPrq4f-FnrydyCtLMnRrSrwdHH/preview",
+    // Module 5
+    "https://drive.google.com/file/d/1oefJFRaesy9QX8lOmr8vyvzalN7xw1dt/preview",
+    // Module 6
+    "https://drive.google.com/file/d/1IrjUhbv5DvTWcOnvAcgiZw7O7b0aJNeT/preview",
+    // Module 7
+    "https://drive.google.com/file/d/1r7V349RHMmOwt5Ha7ObPZURrzTyrYRTI/preview",
+    // Module 8
+    "https://drive.google.com/file/d/13mguPgNlpTOSYhtPOCtCnmy2WB0j_vnr/preview",
+    // MY JOHARI WINDOW
+    "https://drive.google.com/file/d/1oZw7mZQSrc6hGaRtiqiEsmOqJBa-tHJT/preview",
+    // PTC
+    "https://drive.google.com/file/d/1hw4H-Iy3dZg-Y7wabn1X6szQ5tan3N82/preview",
+    // Synthesis Seatwork 
+    "https://drive.google.com/file/d/1YLajT3w3MFCVyUQBwezKnEhP_yr1GGAp/preview"
+  ],
+  Mar: [
+    // Module 1
+    "https://drive.google.com/file/d/10kKVvhdNm0WrA3kIZCc4sa8r6bOR6ShI/preview",
+    // Module 2
+    "https://drive.google.com/file/d/1JXRsA82HRoCPEi1abl8KMheQGhGE4uJM/preview",
+    // Module 3
+    "https://drive.google.com/file/d/18U0OLpzyUZm5J-T3AknarImHgwoFeFKL/preview",
+    // Module 4
+    "https://drive.google.com/file/d/1UCSWPDwtnZfyZhAAwrOyJQk0HCQJaEKh/preview",
+    // Module 5
+    "https://drive.google.com/file/d/1fRpQUcMRKtXUuqC4pzbWXE0e_uTH3a2O/preview",
+    // Module 6
+    "https://drive.google.com/file/d/10xh0qFZ7rVG2ZYuZQGrgz9NL2WBdnz4Y/preview",
+    // Module 7
+    "https://drive.google.com/file/d/1MX2c_w10vqsGXsijqE2DtMnHESZCHgt8/preview",
+    // Module 8
+    "https://drive.google.com/file/d/1pHFoTHEdXSzK5ic3JGreLjQvq-ylzl2K/preview",
+    // MY JOHARI WINDOW
+    "https://drive.google.com/file/d/1iyNG0eXv_xMe2RWstFKYCcMyT3BiPFm9/preview",
+    // PTC
+    "https://drive.google.com/file/d/1AYq3u92JogX_UCFfWOhKBeXd5RFOw8gw/preview",
+    // Synthesis Seatwork 
+    "https://drive.google.com/file/d/13tXyQ3o2wGuv1ryv7eUWFgW85kuLe7EQ/preview"
+  ],
+
+  Gab: [
+    // Module 1
+    "https://drive.google.com/file/d/1jrAsOOv-HI3rVTOV6D-soATul_uhX8au/preview",
+    // Module 2
+    "https://drive.google.com/file/d/15eoTHSVSnKNbbMsUsNTi4QR_SnwDwpAP/preview",
+    // Module 3
+    "https://drive.google.com/file/d/1QiC1LDisuT3ugikWu7PmOvcmY8EeJo8r/preview",
+    // Module 4
+    "https://drive.google.com/file/d/1nbj_mV2urn9psyuVXkBn5lXkG2C0irKT/preview",
+    // Module 5
+    "https://drive.google.com/file/d/11p_HePXVMm6FOcNWnsmFCDAc7WLXONE4/preview",
+    // Module 6
+    "https://drive.google.com/file/d/1jtZQWSF_exUJp9GktMTyyMJWTTLiebNy/preview",
+    // Module 7
+    "https://drive.google.com/file/d/1Iyp1pHUpQZbw2RQAvVL78VmpAR6S12YB/preview",
+    // Module 8
+    "https://drive.google.com/file/d/1kHL4BImkOb3aVzkNZ8wPWfHIiiwXSJJR/preview",
+    // MY JOHARI WINDOW
+    "https://drive.google.com/file/d/1XFjFR-8E6jp4fpvGSaJYqutBzAAyBvvs/preview",
+    // PTC
+    "https://drive.google.com/file/d/1BNVTr5YSS4FFiQ6ZSjdDnLugkrVQJIPw/preview",
+    // Synthesis Seatwork 
+    "https://drive.google.com/file/d/1ldtRfDv1ABn0ueGGeU9huY7NKRlGuxpA/preview"
+
+  ]  
+};
+
 function NavBar({ selectedName, setSelectedName, setSelectedModule, videoMode, setVideoMode }) {
   return (
     <nav className="nav-bar">
@@ -104,17 +181,7 @@ function HomeContent() {
 
 function PDFViewer({ selectedName, selectedModule }) {
   if (!selectedName || selectedModule === null) return null;
-  const folder = selectedName.toLowerCase();
-  let pdfPath = '';
-  if (selectedModule < 8) {
-    pdfPath = `${process.env.PUBLIC_URL}/${folder}/module${selectedModule + 1}.pdf`;
-  } else if (selectedModule === 8) {
-    pdfPath = `${process.env.PUBLIC_URL}/${folder}/my-johari-window.pdf`;
-  } else if (selectedModule === 9) {
-    pdfPath = `${process.env.PUBLIC_URL}/${folder}/ptc.pdf`;
-  } else if (selectedModule === 10) {
-    pdfPath = `${process.env.PUBLIC_URL}/${folder}/synthesis-seatwork.pdf`;
-  }
+  const pdfPath = gdriveLinks[selectedName]?.[selectedModule] || '';
   return (
     <div style={{width: '100%'}}>
       <div className="main-module-content">
