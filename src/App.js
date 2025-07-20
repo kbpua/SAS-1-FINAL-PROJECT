@@ -281,25 +281,41 @@ function PlaceholderContent() {
       </div>
 
       <div className="platform-media">
-        <div style={{ width: '100%', maxWidth: '700px' }}>
-          <iframe
-            src={pdfLink}
-            title="Placeholder PDF"
-            width="100%"
-            style={{
-              height: '800px', // Increased height for portrait orientation
-              border: 'none',
-              borderRadius: 16,
-              background: '#fff',
-              boxShadow: '0 2px 8px rgba(58,92,168,0.08)',
-              maxWidth: '600px', // Better width for portrait documents
-              margin: '0 auto', // Center the iframe
-              display: 'block' // Ensure proper margin behavior
-            }}
-          ></iframe>
-          <div className="media-content">
-            <h3 style={{ color: '#3a5ca8' }}>Our group's Poem</h3>
-            <p>This poem reflects all of the things that the three of us have learned in our SAS 1 journey, capturing our growth and insights along the way.</p>
+        <div style={{ 
+          width: '100%', 
+          maxWidth: '700px',
+          margin: '0 auto',
+          padding: '0 15px'
+        }}>
+          <div style={{
+            width: '100%',
+            position: 'relative',
+            overflow: 'hidden',
+            borderRadius: 16,
+            background: '#fff',
+            boxShadow: '0 2px 8px rgba(58,92,168,0.08)'
+          }}>
+            <iframe
+              src={pdfLink}
+              title="Placeholder PDF"
+              style={{
+                width: '100%',
+                height: '800px',
+                border: 'none',
+                display: 'block',
+                margin: '0 auto',
+                maxWidth: '100%' // Ensure iframe is responsive
+              }}
+            ></iframe>
+          </div>
+          <div className="media-content" style={{
+            padding: '20px',
+            width: '100%',
+            maxWidth: '600px',
+            margin: '0 auto'
+          }}>
+            <h3 style={{ color: '#3a5ca8', marginBottom: '10px' }}>Our group's Poem</h3>
+            <p style={{ fontSize: '16px', lineHeight: '1.5' }}>This poem reflects all of the things that the three of us have learned in our SAS 1 journey, capturing our growth and insights along the way.</p>
           </div>
         </div>
       </div>
