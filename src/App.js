@@ -232,19 +232,20 @@ function PDFViewer({ selectedName, selectedModule }) {
 
 function VideoContent() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', width: '100%' }}>
-      <h2 style={{ color: '#3a5ca8', fontFamily: 'Playfair Display, serif', marginBottom: '1.5rem' }}>Featured Video</h2>
-      <div className="main-module-content" style={{ width: '100%', maxWidth: 700 }}>
-        <div style={{ width: '100%', aspectRatio: '16/9', background: '#000', borderRadius: 12, overflow: 'hidden', boxShadow: '0 4px 24px rgba(58,92,168,0.07)' }}>
+    <div className="page">
+      <h2>Featured Video</h2>
+      <div className="platform-media">
+        <div className="media-video">
           <iframe
-            width="100%"
-            height="100%"
             src="https://www.youtube.com/embed/dQw4w9WgXcQ"
             title="YouTube video player"
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
+        </div>
+        <div>
+          <h3>Video Description</h3>
+          <p>This is our featured video content. Watch and enjoy!</p>
         </div>
       </div>
     </div>
@@ -254,36 +255,53 @@ function VideoContent() {
 function PlaceholderContent() {
   const pdfLink = "https://drive.google.com/file/d/1yuGos0TSLo5ZD7A0uTFbDffwqGen3sFc/preview";
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', width: '100%' }}>
-      <div className="main-placeholder" style={{marginBottom: '1.5rem'}}>
-        <h2>Course Synthesis Output</h2>
-      </div>
-      {/* Video Container */}
-      <div className="main-module-content" style={{ width: '100%', maxWidth: 700, marginBottom: '2rem' }}>
-        <h1>Video</h1>
-        <div style={{ width: '100%', aspectRatio: '16/9', background: '#000', borderRadius: 12, overflow: 'hidden', boxShadow: '0 4px 24px rgba(58,92,168,0.07)' }}>
+    <div className="page">
+      <h2>Course Synthesis Output</h2>
+      
+      {/* Video Section */}
+      <h2 style={{ 
+        color: '#3a5ca8', 
+        fontSize: '2.5rem', 
+        fontFamily: 'Playfair Display, serif',
+        marginTop: '2rem',
+        marginBottom: '1.5rem',
+        textAlign: 'left'
+      }}>Video</h2>
+      <div className="platform-media">
+        <div className="media-video">
           <iframe
-            width="100%"
-            height="100%"
             src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="YouTube video player"
+            title="Course Synthesis Video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
         </div>
+        <div>
+          <h3>Video Presentation</h3>
+          <p>Watch our course synthesis video presentation.</p>
+        </div>
       </div>
 
-      {/* Poem Container */}
-      <div className="main-module-content" style={{ width: '100%', maxWidth: 700 }}>
-        <h1>Poem</h1>
-        <div style={{width: '100%', height: '90vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+      {/* Poem Section */}
+      <h2 style={{ 
+        color: '#3a5ca8', 
+        fontSize: '2.5rem', 
+        fontFamily: 'Playfair Display, serif',
+        marginTop: '3rem',
+        marginBottom: '1.5rem',
+        textAlign: 'left'
+      }}>Poem</h2>
+      <div className="platform-media">
+        <div className="media-video">
           <iframe
             src={pdfLink}
-            title="Placeholder PDF"
-            width="100%"
-            height="100%"
-            style={{border: 'none', minHeight: '500px', background: '#fff'}}
+            title="Course Synthesis Poem"
+            style={{ background: '#fff' }}
           ></iframe>
+        </div>
+        <div>
+          <h3>Written Output</h3>
+          <p>Read our course synthesis poem and reflection.</p>
         </div>
       </div>
     </div>
