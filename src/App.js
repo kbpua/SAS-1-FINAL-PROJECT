@@ -236,8 +236,13 @@ function VideoContent() {
       <h2 style={{ color: '#3a5ca8', fontFamily: 'Playfair Display, serif', marginBottom: '1.5rem' }}>Featured Video</h2>
       <div style={{ width: '100%', maxWidth: 700, aspectRatio: '16/9', background: '#000', borderRadius: 12, overflow: 'hidden', boxShadow: '0 4px 24px rgba(58,92,168,0.07)' }}>
         <iframe
-          width="100%"
-          height="400"
+          style={{ 
+            width: '100%',
+            height: '100%',
+            position: 'absolute',
+            top: 0,
+            left: 0
+          }}
           src="https://www.youtube.com/embed/dQw4w9WgXcQ"
           title="YouTube video player"
           frameBorder="0"
@@ -251,11 +256,11 @@ function VideoContent() {
 
 function PlaceholderContent() {
   // Example GDrive PDF link (replace with your own in the future)
-  const pdfLink = "https://drive.google.com/file/d/EXAMPLE_ID/preview";
+  const pdfLink = "https://drive.google.com/file/d/1aNFmtqGSQzxOh0vjHACUQFGBE-3VC8NK/preview";
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', width: '100%' }}>
       <div className="main-placeholder" style={{marginBottom: '1.5rem'}}>
-        <h2>Placeholder Section</h2>
+        <h2>Song and Poem</h2>
       </div>
       {/* Embedded YouTube video placeholder */}
       <div style={{ width: '100%', maxWidth: 700, aspectRatio: '16/9', background: '#fff', borderRadius: 12, overflow: 'hidden', boxShadow: '0 4px 24px rgba(58,92,168,0.07)', marginBottom: '2rem' }}>
@@ -269,17 +274,21 @@ function PlaceholderContent() {
           allowFullScreen
         ></iframe>
       </div>
-      {/* PDF Viewer for Placeholder section */}
-      <div style={{ width: '100%', maxWidth: 700, aspectRatio: '16/9', background: '#fff', borderRadius: 12, overflow: 'hidden', boxShadow: '0 4px 24px rgba(58,92,168,0.07)' }}>
-        <iframe
-          src={pdfLink}
-          title="Placeholder PDF"
-          width="100%"
-          height="400"
-          style={{ border: 'none', minHeight: '300px', background: '#fff' }}
-        ></iframe>
+      {/* PDF Viewer with consistent styling */}
+      <div className="main-module-content" style={{ width: '100%', maxWidth: 700 }}>
+        <div style={{width: '100%', height: '70vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+          <iframe
+            src={pdfLink}
+            title="Placeholder PDF"
+            width="100%"
+            height="100%"
+            style={{border: 'none', minHeight: '500px', background: '#fff'}}
+          ></iframe>
+        </div>
+        <p style={{textAlign: 'center', color: '#888', marginTop: '1rem', fontSize: '1rem'}}>
+          You can add a GDrive PDF link here in the future.
+        </p>
       </div>
-      <p style={{ textAlign: 'center', color: '#888', marginTop: '1rem', fontSize: '1rem' }}>You can add a GDrive PDF link here in the future.</p>
     </div>
   );
 }
