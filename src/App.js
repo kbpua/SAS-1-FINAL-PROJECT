@@ -262,10 +262,24 @@ function PlaceholderContent() {
       
       <div className="platform-media">
         <div style={{ width: '100%', maxWidth: '700px' }}>
-          <div style={{ width: '100%', aspectRatio: '16/9', background: '#000', borderRadius: 16, overflow: 'hidden', boxShadow: '0 2px 8px rgba(58,92,168,0.08)' }}>
+          <div style={{ 
+            width: '100%', 
+            paddingTop: '56.25%', // 16:9 aspect ratio
+            position: 'relative',
+            background: '#000', 
+            borderRadius: 16, 
+            overflow: 'hidden', 
+            boxShadow: '0 2px 8px rgba(58,92,168,0.08)' 
+          }}>
             <iframe
-              width="100%"
-              height="100%"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 'none'
+              }}
               src="https://www.youtube.com/embed/dQw4w9WgXcQ"
               title="YouTube video player"
               frameBorder="0"
@@ -274,7 +288,7 @@ function PlaceholderContent() {
             ></iframe>
           </div>
           <div className="media-content" style={{
-            padding: '20px 20px 20px 25px', // Added extra left padding
+            padding: '20px 20px 20px 25px',
             width: '100%',
             maxWidth: '600px',
             margin: '0 auto'
