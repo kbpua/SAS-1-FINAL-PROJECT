@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/SAS-1-FINAL-PROJECT/static/css/main.52fb2ffb.css",
-    "main.js": "/SAS-1-FINAL-PROJECT/static/js/main.93c2cdc8.js",
+    "main.css": "/SAS-1-FINAL-PROJECT/static/css/main.2289c99c.css",
+    "main.js": "/SAS-1-FINAL-PROJECT/static/js/main.7fac87e6.js",
     "static/js/453.7ca24930.chunk.js": "/SAS-1-FINAL-PROJECT/static/js/453.7ca24930.chunk.js",
     "index.html": "/SAS-1-FINAL-PROJECT/index.html",
-    "main.52fb2ffb.css.map": "/SAS-1-FINAL-PROJECT/static/css/main.52fb2ffb.css.map",
-    "main.93c2cdc8.js.map": "/SAS-1-FINAL-PROJECT/static/js/main.93c2cdc8.js.map",
+    "main.2289c99c.css.map": "/SAS-1-FINAL-PROJECT/static/css/main.2289c99c.css.map",
+    "main.7fac87e6.js.map": "/SAS-1-FINAL-PROJECT/static/js/main.7fac87e6.js.map",
     "453.7ca24930.chunk.js.map": "/SAS-1-FINAL-PROJECT/static/js/453.7ca24930.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.52fb2ffb.css",
-    "static/js/main.93c2cdc8.js"
+    "static/css/main.2289c99c.css",
+    "static/js/main.7fac87e6.js"
   ]
 }
