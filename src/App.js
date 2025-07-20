@@ -287,11 +287,14 @@ function PlaceholderContent() {
             title="Placeholder PDF"
             width="100%"
             style={{
-              height: '400px',
+              height: '800px', // Increased height for portrait orientation
               border: 'none',
               borderRadius: 16,
               background: '#fff',
-              boxShadow: '0 2px 8px rgba(58,92,168,0.08)'
+              boxShadow: '0 2px 8px rgba(58,92,168,0.08)',
+              maxWidth: '600px', // Better width for portrait documents
+              margin: '0 auto', // Center the iframe
+              display: 'block' // Ensure proper margin behavior
             }}
           ></iframe>
           <div className="media-content">
