@@ -273,9 +273,14 @@ function PlaceholderContent() {
               allowFullScreen
             ></iframe>
           </div>
-          <div className="media-content">
-            <h3 style={{ color: '#3a5ca8' }}>Our group's Song</h3>
-            <p>This "Lyric Video" is inspired by our SAS 1 journey, a collaborative exploration of our learning experiences and insights.</p>
+          <div className="media-content" style={{
+            padding: '20px 20px 20px 25px', // Added extra left padding
+            width: '100%',
+            maxWidth: '600px',
+            margin: '0 auto'
+          }}>
+            <h3 style={{ color: '#3a5ca8', marginBottom: '10px', textAlign: 'left' }}>Our group's Song</h3>
+            <p style={{ fontSize: '16px', lineHeight: '1.5', textAlign: 'left' }}>This "Lyric Video" is inspired by our SAS 1 journey, a collaborative exploration of our learning experiences and insights.</p>
           </div>
         </div>
       </div>
@@ -309,13 +314,13 @@ function PlaceholderContent() {
             ></iframe>
           </div>
           <div className="media-content" style={{
-            padding: '20px',
+            padding: '20px 20px 20px 25px', // Added extra left padding
             width: '100%',
             maxWidth: '600px',
             margin: '0 auto'
           }}>
-            <h3 style={{ color: '#3a5ca8', marginBottom: '10px' }}>Our group's Poem</h3>
-            <p style={{ fontSize: '16px', lineHeight: '1.5' }}>This poem reflects all of the things that the three of us have learned in our SAS 1 journey, capturing our growth and insights along the way.</p>
+            <h3 style={{ color: '#3a5ca8', marginBottom: '10px', textAlign: 'left' }}>Our group's Poem</h3>
+            <p style={{ fontSize: '16px', lineHeight: '1.5', textAlign: 'left' }}>This poem reflects all of the things that the three of us have learned in our SAS 1 journey, capturing our growth and insights along the way.</p>
           </div>
         </div>
       </div>
