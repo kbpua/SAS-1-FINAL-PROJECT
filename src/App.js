@@ -95,6 +95,15 @@ const gdriveLinks = {
 };
 
 function NavBar({ selectedName, setSelectedName, setSelectedModule, videoMode, setVideoMode }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  // Close menu when switching to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 700) setMenuOpen(false);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <nav className="nav-bar">
       <button
@@ -103,29 +112,38 @@ function NavBar({ selectedName, setSelectedName, setSelectedModule, videoMode, s
           setSelectedName(null);
           setSelectedModule(null);
           setVideoMode(false);
+          setMenuOpen(false);
         }}
       >
         Home
       </button>
-      {NAV_OPTIONS.map((name) => (
-        <button
-          key={name}
-          className={`nav-name${selectedName === name || (name === 'Video' && videoMode) ? ' active' : ''}`}
-          onClick={() => {
-            if (name === 'Video') {
-              setVideoMode(true);
-              setSelectedName(null);
-              setSelectedModule(null);
-            } else {
-              setSelectedName(name);
-              setSelectedModule(null);
-              setVideoMode(false);
-            }
-          }}
-        >
-          {name}
-        </button>
-      ))}
+      <button className={`nav-toggle${menuOpen ? ' open' : ''}`} onClick={() => setMenuOpen((open) => !open)} aria-label="Toggle navigation">
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
+      <div className={`nav-links${menuOpen ? ' show' : ''}`}>
+        {NAV_OPTIONS.map((name) => (
+          <button
+            key={name}
+            className={`nav-name${selectedName === name || (name === 'Video' && videoMode) ? ' active' : ''}`}
+            onClick={() => {
+              if (name === 'Video') {
+                setVideoMode(true);
+                setSelectedName(null);
+                setSelectedModule(null);
+              } else {
+                setSelectedName(name);
+                setSelectedModule(null);
+                setVideoMode(false);
+              }
+              setMenuOpen(false);
+            }}
+          >
+            {name}
+          </button>
+        ))}
+      </div>
     </nav>
   );
 }
@@ -171,9 +189,11 @@ function HomeContent() {
       <div className="home-cover-container">
         <img src={process.env.PUBLIC_URL + '/sas1-journey-cover.png'} alt="SAS 1 Journey Cover" className="home-cover" />
       </div>
-      <div className="main-placeholder">
-        <h2>Welcome to our SAS 1 Portfolio</h2>
-        <p>Select a name above to view their modules.</p>
+      <div className="main-placeholder-container">
+        <div className="main-placeholder">
+          <h2>Welcome to our SAS 1 Portfolio</h2>
+          <p>Select a name above to view their modules.</p>
+        </div>
       </div>
     </div>
   );
