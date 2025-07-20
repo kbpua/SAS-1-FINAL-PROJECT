@@ -1,11 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
+/* Modern Color Palette */
+:root {
+  --primary: #3a5ca8;
+  --accent: #3a5ca8;
+  --background: #f5f6fa;
+  --card-bg: #fff;
+  --text: #22304a;
+  --secondary-accent: #ffe066;
+}
+
 body {
   font-family: 'Montserrat', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f5eedc;
-  color: #3a5ca8;
+  background: var(--background);
+  color: var(--text);
   position: relative;
 }
 
@@ -96,7 +106,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  background: #fff;
+  background: var(--card-bg);
   border-bottom: 2px solid #e0e0e0;
   padding: 0 0;
   font-size: 1.15rem;
@@ -110,19 +120,21 @@ body {
 
 .nav-name {
   background: transparent;
-  color: #3a5ca8;
+  color: var(--primary);
   border: none;
   border-radius: 8px;
   padding: 0.8rem 1.2rem;
   font-size: 1.2rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
   font-family: 'Montserrat', Arial, sans-serif;
 }
 .nav-name.active, .nav-name:hover {
-  background: #3a5ca8;
+  background: var(--primary);
   color: #fff;
+  box-shadow: 0 4px 16px rgba(58,92,168,0.13);
+  transform: translateY(-2px) scale(1.04);
 }
 
 /* Module list styles */
@@ -139,15 +151,15 @@ body {
   align-items: center;
 }
 .module-btn, .module-sidebar-btn {
-  background: rgba(255, 255, 255, 0.75);
-  color: #3a5ca8;
-  border: 2px solid #3a5ca8;
-  border-radius: 12px;
+  background: var(--card-bg);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 16px;
   padding: 1rem 2.5rem;
   font-size: 1.15rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+  transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s, transform 0.2s;
   width: 260px;
   text-align: center;
   font-family: 'Montserrat', Arial, sans-serif;
@@ -158,10 +170,11 @@ body {
   margin-bottom: 0.5rem;
 }
 .module-btn.active, .module-btn:hover, .module-sidebar-btn.active, .module-sidebar-btn:hover {
-  background: rgba(58,92,168,0.90);
-  color: #fff;
-  border: 2px solid #3a5ca8;
-  box-shadow: 0 8px 32px rgba(58,92,168,0.18);
+  background: var(--accent);
+  color: #3a5ca8;
+  border: 2px solid var(--accent);
+  box-shadow: 0 8px 32px rgba(233,79,55,0.18);
+  transform: translateY(-2px) scale(1.04);
 }
 
 /* Remove sidebar and main-layout styles */
@@ -188,27 +201,30 @@ body {
   margin-top: 4rem;
 }
 .main-placeholder {
-  background: rgba(255,255,255,0.7);
+  background: var(--primary);
+  color: #fff;
   padding: 1.5rem 1rem;
   border-radius: 16px;
   box-shadow: 0 2px 12px rgba(58,92,168,0.07);
-  color: #3a5ca8;
   font-size: 1.5rem;
   text-align: center;
   font-family: 'Playfair Display', serif;
 }
+.main-placeholder h2 {
+  color: #fff;
+}
 .main-module-content {
-  background: rgba(255,255,255,0.95);
+  background: var(--card-bg);
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(58,92,168,0.07);
   padding: 2.5rem 2rem;
   max-width: 700px;
   margin: 2rem auto;
-  color: #3a5ca8;
+  color: var(--text);
   font-family: 'Montserrat', Arial, sans-serif;
 }
 .main-module-content h2 {
-  color: #3a5ca8;
+  color: var(--primary);
   margin-top: 0;
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
@@ -385,7 +401,7 @@ body {
 footer {
   text-align: center;
   padding: 2.2rem 0 1.2rem 0;
-  background: #3a5ca8;
+  background: var(--primary);
   color: #fff;
   margin-top: 3rem;
   font-size: 1.1rem;
@@ -836,4 +852,68 @@ img, .media-img, .hero-img {
     flex: 1 0 40%;
     margin-bottom: 0.2rem;
   }
+}
+
+/* Accent highlight for important elements */
+.accent {
+  color: var(--accent);
+}
+
+/* Card/module design */
+.main-module-content, .module-list, .module-sidebar {
+  box-shadow: 0 4px 24px rgba(58,92,168,0.10);
+  border-radius: 18px;
+  background: var(--card-bg);
+}
+
+/* Subtle fade-in animation for main content */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: none; }
+}
+.main-module-content, .module-list, .module-sidebar {
+  animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Typography improvements */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+  margin-bottom: 0.7em;
+}
+p, li, button {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+/* Spacing improvements */
+.module-list, .module-sidebar {
+  padding: 1.2rem 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Stylish footer with social icons */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-social {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+.footer-social a {
+  color: var(--secondary-accent);
+  font-size: 1.7rem;
+  transition: color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-social a:hover {
+  color: var(--accent);
+  transform: translateY(-2px) scale(1.12);
 }
