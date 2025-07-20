@@ -2,7 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 
 const names = ['Gab', 'Mar', 'Kurt'];
-const NAV_OPTIONS = ['Gab', 'Mar', 'Kurt', 'Placeholder'];
+const NAV_OPTIONS = ['Gab', 'Mar', 'Kurt', 'Final Output'];
 const modules = [
   'Module 1',
   'Module 2',
@@ -134,9 +134,9 @@ function NavBar({ selectedName, setSelectedName, setSelectedModule, videoMode, s
         {NAV_OPTIONS.map((name) => (
           <button
             key={name}
-            className={`nav-name${selectedName === name || (name === 'Placeholder' && videoMode) ? ' active' : ''}`}
+            className={`nav-name${selectedName === name || (name === 'Final Output' && videoMode) ? ' active' : ''}`}
             onClick={() => {
-              if (name === 'Placeholder') {
+              if (name === 'Final Output') {
                 setVideoMode(true);
                 setSelectedName(null);
                 setSelectedModule(null);
@@ -234,49 +234,49 @@ function VideoContent() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', width: '100%' }}>
       <h2 style={{ color: '#3a5ca8', fontFamily: 'Playfair Display, serif', marginBottom: '1.5rem' }}>Featured Video</h2>
-      <div style={{ width: '100%', maxWidth: 700, aspectRatio: '16/9', background: '#000', borderRadius: 12, overflow: 'hidden', boxShadow: '0 4px 24px rgba(58,92,168,0.07)' }}>
-        <iframe
-          style={{ 
-            width: '100%',
-            height: '100%',
-            position: 'absolute',
-            top: 0,
-            left: 0
-          }}
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        ></iframe>
+      <div className="main-module-content" style={{ width: '100%', maxWidth: 700 }}>
+        <div style={{ width: '100%', aspectRatio: '16/9', background: '#000', borderRadius: 12, overflow: 'hidden', boxShadow: '0 4px 24px rgba(58,92,168,0.07)' }}>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
     </div>
   );
 }
 
 function PlaceholderContent() {
-  // Example GDrive PDF link (replace with your own in the future)
-  const pdfLink = "https://drive.google.com/file/d/1aNFmtqGSQzxOh0vjHACUQFGBE-3VC8NK/preview";
+  const pdfLink = "https://drive.google.com/file/d/1yuGos0TSLo5ZD7A0uTFbDffwqGen3sFc/preview";
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', width: '100%' }}>
       <div className="main-placeholder" style={{marginBottom: '1.5rem'}}>
-        <h2>Song and Poem</h2>
+        <h2>Course Synthesis Output</h2>
       </div>
-      {/* Embedded YouTube video placeholder */}
-      <div style={{ width: '100%', maxWidth: 700, aspectRatio: '16/9', background: '#fff', borderRadius: 12, overflow: 'hidden', boxShadow: '0 4px 24px rgba(58,92,168,0.07)', marginBottom: '2rem' }}>
-        <iframe
-          width="100%"
-          height="400"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        ></iframe>
+      {/* Video Container */}
+      <div className="main-module-content" style={{ width: '100%', maxWidth: 700, marginBottom: '2rem' }}>
+        <h1>Video</h1>
+        <div style={{ width: '100%', aspectRatio: '16/9', background: '#000', borderRadius: 12, overflow: 'hidden', boxShadow: '0 4px 24px rgba(58,92,168,0.07)' }}>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
-      {/* PDF Viewer with consistent styling */}
+
+      {/* Poem Container */}
       <div className="main-module-content" style={{ width: '100%', maxWidth: 700 }}>
-        <div style={{width: '100%', height: '70vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <h1>Poem</h1>
+        <div style={{width: '100%', height: '90vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           <iframe
             src={pdfLink}
             title="Placeholder PDF"
@@ -285,9 +285,6 @@ function PlaceholderContent() {
             style={{border: 'none', minHeight: '500px', background: '#fff'}}
           ></iframe>
         </div>
-        <p style={{textAlign: 'center', color: '#888', marginTop: '1rem', fontSize: '1rem'}}>
-          You can add a GDrive PDF link here in the future.
-        </p>
       </div>
     </div>
   );
