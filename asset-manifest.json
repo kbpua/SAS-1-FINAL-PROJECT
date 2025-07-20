@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/SAS-1-FINAL-PROJECT/static/css/main.3dd9a9a5.css",
+    "main.css": "/SAS-1-FINAL-PROJECT/static/css/main.17570fd9.css",
     "main.js": "/SAS-1-FINAL-PROJECT/static/js/main.9b52ff1f.js",
     "static/js/453.7ca24930.chunk.js": "/SAS-1-FINAL-PROJECT/static/js/453.7ca24930.chunk.js",
     "index.html": "/SAS-1-FINAL-PROJECT/index.html",
-    "main.3dd9a9a5.css.map": "/SAS-1-FINAL-PROJECT/static/css/main.3dd9a9a5.css.map",
+    "main.17570fd9.css.map": "/SAS-1-FINAL-PROJECT/static/css/main.17570fd9.css.map",
     "main.9b52ff1f.js.map": "/SAS-1-FINAL-PROJECT/static/js/main.9b52ff1f.js.map",
     "453.7ca24930.chunk.js.map": "/SAS-1-FINAL-PROJECT/static/js/453.7ca24930.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3dd9a9a5.css",
+    "static/css/main.17570fd9.css",
     "static/js/main.9b52ff1f.js"
   ]
 }
