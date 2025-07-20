@@ -14,9 +14,20 @@ body {
   font-family: 'Montserrat', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: var(--background);
+  background: linear-gradient(135deg, #e3ecfa 0%, #f5f6fa 60%, #d0e1fa 100%);
   color: var(--text);
   position: relative;
+}
+
+.nav-logo-img {
+  height: 55px;
+  width: 55px;
+  margin-right: 1rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(58,92,168,0.10);
+  background: #fff;
+  object-fit: cover;
+  display: block;
 }
 
 .background-blur {
@@ -41,7 +52,7 @@ body {
 }
 
 .home-cover {
-  max-width: 700px;
+  max-width: 640px;
   width: 100%;
   border-radius: 18px;
   box-shadow: 0 8px 32px rgba(58,92,168,0.13);
@@ -115,7 +126,7 @@ body {
   top: 0;
   z-index: 100;
   height: 60px;
-  box-shadow: 0 2px 12px rgba(58,92,168,0.07);
+  box-shadow: 0 2px 12px rgba(58,92,168,0.12);
 }
 
 .nav-name {
@@ -191,27 +202,30 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 60px;
+  margin-top: 5px;
 }
 .main-placeholder-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 4rem;
+  margin-top: 1.5rem;
 }
 .main-placeholder {
-  background: var(--primary);
-  color: #fff;
-  padding: 1.5rem 1rem;
+  margin-top: 0.75rem;
+  font-size: 1.2rem;
+  padding: 1.1rem 0.7rem;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--primary);
   border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(58,92,168,0.07);
-  font-size: 1.5rem;
+  box-shadow: 0 2px 12px rgba(58,92,168,0.8);
   text-align: center;
   font-family: 'Playfair Display', serif;
 }
 .main-placeholder h2 {
-  color: #fff;
+  color: var(--primary);
 }
 .main-module-content {
   background: var(--card-bg);
@@ -401,17 +415,18 @@ body {
 footer {
   text-align: center;
   padding: 2.2rem 0 1.2rem 0;
-  background: var(--primary);
-  color: #fff;
+  background: var(--card-bg);
+  color: var(--primary);
   margin-top: 3rem;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
   border-radius: 24px 24px 0 0;
   box-shadow: 0 -2px 16px rgba(58,92,168,0.07);
   position: relative;
+  box-shadow: 0 2px 12px rgba(58,92,168,0.12);
 }
 footer .footer-social {
-  margin-top: 1rem;
+  margin-top: 1px;
   display: flex;
   justify-content: center;
   gap: 1.5rem;
@@ -861,7 +876,7 @@ img, .media-img, .hero-img {
 
 /* Card/module design */
 .main-module-content, .module-list, .module-sidebar {
-  box-shadow: 0 4px 24px rgba(58,92,168,0.10);
+  box-shadow: 0 4px 24px rgba(40,82,158,0.10);
   border-radius: 18px;
   background: var(--card-bg);
 }

@@ -2,7 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 
 const names = ['Gab', 'Mar', 'Kurt'];
-const NAV_OPTIONS = ['Gab', 'Mar', 'Kurt', 'Video'];
+const NAV_OPTIONS = ['Gab', 'Mar', 'Kurt', 'Placeholder'];
 const modules = [
   'Module 1',
   'Module 2',
@@ -15,6 +15,7 @@ const modules = [
   'MY JOHARI WINDOW',
   'PTC',
   'Synthesis Seatwork',
+  'FINAL PROJECT: Reflective Essay',
 ];
 
 const gdriveLinks = {
@@ -40,7 +41,9 @@ const gdriveLinks = {
     // PTC
     "https://drive.google.com/file/d/1hw4H-Iy3dZg-Y7wabn1X6szQ5tan3N82/preview",
     // Synthesis Seatwork 
-    "https://drive.google.com/file/d/1YLajT3w3MFCVyUQBwezKnEhP_yr1GGAp/preview"
+    "https://drive.google.com/file/d/1YLajT3w3MFCVyUQBwezKnEhP_yr1GGAp/preview",
+    // FINAL PROJECT: Reflective Essay
+    "https://drive.google.com/file/d/PLACEHOLDER_FINAL_PROJECT_LINK/preview"
   ],
   Mar: [
     // Module 1
@@ -64,7 +67,9 @@ const gdriveLinks = {
     // PTC
     "https://drive.google.com/file/d/1AYq3u92JogX_UCFfWOhKBeXd5RFOw8gw/preview",
     // Synthesis Seatwork 
-    "https://drive.google.com/file/d/13tXyQ3o2wGuv1ryv7eUWFgW85kuLe7EQ/preview"
+    "https://drive.google.com/file/d/13tXyQ3o2wGuv1ryv7eUWFgW85kuLe7EQ/preview",
+    // FINAL PROJECT: Reflective Essay
+    "https://drive.google.com/file/d/PLACEHOLDER_FINAL_PROJECT_LINK/preview"
   ],
 
   Gab: [
@@ -89,7 +94,9 @@ const gdriveLinks = {
     // PTC
     "https://drive.google.com/file/d/1BNVTr5YSS4FFiQ6ZSjdDnLugkrVQJIPw/preview",
     // Synthesis Seatwork 
-    "https://drive.google.com/file/d/1ldtRfDv1ABn0ueGGeU9huY7NKRlGuxpA/preview"
+    "https://drive.google.com/file/d/1ldtRfDv1ABn0ueGGeU9huY7NKRlGuxpA/preview",
+    // FINAL PROJECT: Reflective Essay
+    "https://drive.google.com/file/d/PLACEHOLDER_FINAL_PROJECT_LINK/preview"
 
   ]  
 };
@@ -106,6 +113,7 @@ function NavBar({ selectedName, setSelectedName, setSelectedModule, videoMode, s
   }, []);
   return (
     <nav className="nav-bar">
+      <img src={process.env.PUBLIC_URL + '/megaphone-logo.png'} alt="Logo" className="nav-logo-img" />
       <button
         className={`nav-name${selectedName === null && !videoMode ? ' active' : ''}`}
         onClick={() => {
@@ -126,9 +134,9 @@ function NavBar({ selectedName, setSelectedName, setSelectedModule, videoMode, s
         {NAV_OPTIONS.map((name) => (
           <button
             key={name}
-            className={`nav-name${selectedName === name || (name === 'Video' && videoMode) ? ' active' : ''}`}
+            className={`nav-name${selectedName === name || (name === 'Placeholder' && videoMode) ? ' active' : ''}`}
             onClick={() => {
-              if (name === 'Video') {
+              if (name === 'Placeholder') {
                 setVideoMode(true);
                 setSelectedName(null);
                 setSelectedModule(null);
@@ -241,6 +249,41 @@ function VideoContent() {
   );
 }
 
+function PlaceholderContent() {
+  // Example GDrive PDF link (replace with your own in the future)
+  const pdfLink = "https://drive.google.com/file/d/EXAMPLE_ID/preview";
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', width: '100%' }}>
+      <div className="main-placeholder" style={{marginBottom: '1.5rem'}}>
+        <h2>Placeholder Section</h2>
+      </div>
+      {/* Embedded YouTube video placeholder */}
+      <div style={{ width: '100%', maxWidth: 700, aspectRatio: '16/9', background: '#fff', borderRadius: 12, overflow: 'hidden', boxShadow: '0 4px 24px rgba(58,92,168,0.07)', marginBottom: '2rem' }}>
+        <iframe
+          width="100%"
+          height="400"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
+      </div>
+      {/* PDF Viewer for Placeholder section */}
+      <div style={{ width: '100%', maxWidth: 700, aspectRatio: '16/9', background: '#fff', borderRadius: 12, overflow: 'hidden', boxShadow: '0 4px 24px rgba(58,92,168,0.07)' }}>
+        <iframe
+          src={pdfLink}
+          title="Placeholder PDF"
+          width="100%"
+          height="400"
+          style={{ border: 'none', minHeight: '300px', background: '#fff' }}
+        ></iframe>
+      </div>
+      <p style={{ textAlign: 'center', color: '#888', marginTop: '1rem', fontSize: '1rem' }}>You can add a GDrive PDF link here in the future.</p>
+    </div>
+  );
+}
+
 function MainContent({ selectedName, selectedModule, setSelectedModule }) {
   if (!selectedName) {
     return <HomeContent />;
@@ -297,18 +340,10 @@ function App() {
       <NavBar selectedName={selectedName} setSelectedName={setSelectedName} setSelectedModule={setSelectedModule} videoMode={videoMode} setVideoMode={setVideoMode} />
       {/* Add the select module prompt at the top if a name is selected but no module is selected */}
       {selectedName && selectedModule === null && !videoMode && (
-        <div style={{
-          width: '100%',
-          textAlign: 'center',
-          marginTop: '2rem',
-          fontSize: '2rem',
-          fontWeight: 700,
-          color: '#3a5ca8',
-          fontFamily: 'Playfair Display, serif',
-          zIndex: 2,
-          position: 'relative'
-        }}>
-          Select a module for {selectedName}.
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+          <div className="main-placeholder" style={{ marginBottom: '1.5rem' }}>
+            <h2 style={{ margin: 0 }}>Select a module for {selectedName}.</h2>
+          </div>
         </div>
       )}
       {!videoMode && (
@@ -316,7 +351,7 @@ function App() {
       )}
       <main className="main-content">
         {videoMode ? (
-          <VideoContent />
+          <PlaceholderContent />
         ) : (
           <MainContent selectedName={selectedName} selectedModule={selectedModule} setSelectedModule={setSelectedModule} />
         )}
