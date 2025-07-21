@@ -46,7 +46,7 @@ const gdriveLinks = {
     // FINAL PROJECT: Reflective Essay
     "https://drive.google.com/file/d/1bEf7I3mNoBkMpYcFwoQBJ63-PLSHzdId/preview",
     // FINAL PROJECT: Discussion
-    "https://drive.google.com/file/d/1bEf7I3mNoBkMpYcFwoQBJ63-PLSHzdId/preview"
+    "https://drive.google.com/file/d/1jq3efFH9dgEjmObV4-tdwoWTe4yvi04I/preview"
   ],
   Mar: [
     // Module 1
@@ -74,7 +74,8 @@ const gdriveLinks = {
     // FINAL PROJECT: Reflective Essay
     "https://drive.google.com/file/d/1WXi4JZi8QCxisjMveZSMnCmk5-MJSaVk/preview",
     // FINAL PROJECT: Discussion
-    "https://drive.google.com/file/d/PLACEHOLDER/preview" 
+    "https://drive.google.com/file/d/1jq3efFH9dgEjmObV4-tdwoWTe4yvi04I/preview"
+
   ],
 
   Gab: [
@@ -101,9 +102,9 @@ const gdriveLinks = {
     // Synthesis Seatwork 
     "https://drive.google.com/file/d/1ldtRfDv1ABn0ueGGeU9huY7NKRlGuxpA/preview",
     // FINAL PROJECT: Reflective Essay
-    "https://drive.google.com/file/d/1bEf7I3mNoBkMpYcFwoQBJ63-PLSHzdId/preview",
+    "https://drive.google.com/file/d/1v1m_K9dx5RmSpt5qHPr1xH1hlroXJad9/preview",
     // FINAL PROJECT: Discussion
-    "https://drive.google.com/file/d/1bEf7I3mNoBkMpYcFwoQBJ63-PLSHzdId/preview"
+    "https://drive.google.com/file/d/1jq3efFH9dgEjmObV4-tdwoWTe4yvi04I/preview"
 
   ]  
 };
@@ -246,7 +247,7 @@ function VideoContent() {
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            src="https://www.youtube.com/embed/_oGNJjJlMqc"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -259,7 +260,7 @@ function VideoContent() {
 }
 
 function PlaceholderContent() {
-  const pdfLink = "https://drive.google.com/file/d/1yuGos0TSLo5ZD7A0uTFbDffwqGen3sFc/preview";
+  const pdfLink = "https://drive.google.com/file/d/1mhYMTEYVaMkOZoRb43e1ola_lmKWerRR/preview";
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', width: '100%', padding: '0 1rem' }}>
       <div className="main-placeholder" style={{marginBottom: '1.5rem'}}>
@@ -273,7 +274,7 @@ function PlaceholderContent() {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              src="https://www.youtube.com/embed/_oGNJjJlMqc"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
