@@ -16,6 +16,7 @@ const modules = [
   'PTC',
   'Synthesis Seatwork',
   'FINAL PROJECT: Reflective Essay',
+  'FINAL PROJECT: Discussion',
 ];
 
 const gdriveLinks = {
@@ -43,7 +44,9 @@ const gdriveLinks = {
     // Synthesis Seatwork 
     "https://drive.google.com/file/d/1YLajT3w3MFCVyUQBwezKnEhP_yr1GGAp/preview",
     // FINAL PROJECT: Reflective Essay
-    "https://drive.google.com/file/d/PLACEHOLDER_FINAL_PROJECT_LINK/preview"
+    "https://drive.google.com/file/d/1rlgpgjnuZ6KkFdxGD31N4td1sTl3Olb3/preview",
+    // FINAL PROJECT: Discussion
+    "https://drive.google.com/file/d/1rlgpgjnuZ6KkFdxGD31N4td1sTl3Olb3/preview"
   ],
   Mar: [
     // Module 1
@@ -69,7 +72,9 @@ const gdriveLinks = {
     // Synthesis Seatwork 
     "https://drive.google.com/file/d/13tXyQ3o2wGuv1ryv7eUWFgW85kuLe7EQ/preview",
     // FINAL PROJECT: Reflective Essay
-    "https://drive.google.com/file/d/PLACEHOLDER_FINAL_PROJECT_LINK/preview"
+    "https://drive.google.com/file/d/PLACEHOLDER_FINAL_PROJECT_LINK/preview",
+    // FINAL PROJECT: Discussion
+    "https://drive.google.com/file/d/PLACEHOLDER/preview" 
   ],
 
   Gab: [
@@ -96,7 +101,9 @@ const gdriveLinks = {
     // Synthesis Seatwork 
     "https://drive.google.com/file/d/1ldtRfDv1ABn0ueGGeU9huY7NKRlGuxpA/preview",
     // FINAL PROJECT: Reflective Essay
-    "https://drive.google.com/file/d/PLACEHOLDER_FINAL_PROJECT_LINK/preview"
+    "https://drive.google.com/file/d/PLACEHOLDER_FINAL_PROJECT_LINK/preview",
+    // FINAL PROJECT: Discussion
+    "https://drive.google.com/file/d/PLACEHOLDER/preview" 
 
   ]  
 };
