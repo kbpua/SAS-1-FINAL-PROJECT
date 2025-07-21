@@ -44,9 +44,9 @@ const gdriveLinks = {
     // Synthesis Seatwork 
     "https://drive.google.com/file/d/1YLajT3w3MFCVyUQBwezKnEhP_yr1GGAp/preview",
     // FINAL PROJECT: Reflective Essay
-    "https://drive.google.com/file/d/1rlgpgjnuZ6KkFdxGD31N4td1sTl3Olb3/preview",
+    "https://drive.google.com/file/d/1bEf7I3mNoBkMpYcFwoQBJ63-PLSHzdId/preview",
     // FINAL PROJECT: Discussion
-    "https://drive.google.com/file/d/1rlgpgjnuZ6KkFdxGD31N4td1sTl3Olb3/preview"
+    "https://drive.google.com/file/d/1bEf7I3mNoBkMpYcFwoQBJ63-PLSHzdId/preview"
   ],
   Mar: [
     // Module 1
@@ -72,7 +72,7 @@ const gdriveLinks = {
     // Synthesis Seatwork 
     "https://drive.google.com/file/d/13tXyQ3o2wGuv1ryv7eUWFgW85kuLe7EQ/preview",
     // FINAL PROJECT: Reflective Essay
-    "https://drive.google.com/file/d/PLACEHOLDER_FINAL_PROJECT_LINK/preview",
+    "https://drive.google.com/file/d/1WXi4JZi8QCxisjMveZSMnCmk5-MJSaVk/preview",
     // FINAL PROJECT: Discussion
     "https://drive.google.com/file/d/PLACEHOLDER/preview" 
   ],
@@ -101,9 +101,9 @@ const gdriveLinks = {
     // Synthesis Seatwork 
     "https://drive.google.com/file/d/1ldtRfDv1ABn0ueGGeU9huY7NKRlGuxpA/preview",
     // FINAL PROJECT: Reflective Essay
-    "https://drive.google.com/file/d/PLACEHOLDER_FINAL_PROJECT_LINK/preview",
+    "https://drive.google.com/file/d/1bEf7I3mNoBkMpYcFwoQBJ63-PLSHzdId/preview",
     // FINAL PROJECT: Discussion
-    "https://drive.google.com/file/d/PLACEHOLDER/preview" 
+    "https://drive.google.com/file/d/1bEf7I3mNoBkMpYcFwoQBJ63-PLSHzdId/preview"
 
   ]  
 };
